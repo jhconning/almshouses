@@ -1,0 +1,44 @@
+name: Deploy MyST Site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install TeX Live
+        run: sudo apt-get update && sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-plain-generic
+
+      - name: Install MyST
+        run: npm install -g mystmd
+
+      - name: Build MyST Site and PDFs
+        env:
+          BASE_URL: /almshouses/
+        run: myst build --all && myst build --html
+
+      - name: Ensure .nojekyll exists
+        run: touch _build/html/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_build/html
+          cname: '' # Add your custom domain here if you have one
