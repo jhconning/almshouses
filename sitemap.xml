@@ -10,4 +10,7 @@
   <url>
     <loc>http://localhost:3000/sfm-spatial</loc>
   </url>
+  <url>
+    <loc>http://localhost:3000/references</loc>
+  </url>
 </urlset>
