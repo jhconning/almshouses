@@ -1,6 +1,6 @@
 # Almshouses Spatial QSE Model
 
-![19th Century Almshouse](ny_almshouse.png)
+![19th Century Almshouse](biblio/ny_almshouse.png)
 
 This repository contains sample Quantitative Spatial Economics (QSE) didactic models, to model migration patterns and 19th-century pauperism and almshouse dynamics.  Site renders at: https://jhconning.github.io/almshouses/
 
