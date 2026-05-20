@@ -22,8 +22,8 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install TeX Live
-        run: sudo apt-get update && sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-plain-generic
+      - name: Install Typst (Optional)
+        run: sudo apt-get update && sudo apt-get install -y typst || echo "Typst may already be bundled by MyST"
 
       - name: Install MyST
         run: npm install -g mystmd
