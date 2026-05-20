@@ -15,6 +15,7 @@ project:
     - file: README.md
     - file: notebooks/Almshouses.ipynb
     - file: notebooks/SFM_Spatial.ipynb
+    - file: notebooks/NestedModel.ipynb
     - file: biblio/references.md
 site:
   template: book-theme
