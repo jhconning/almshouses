@@ -18,6 +18,7 @@ project:
     - file: notebooks/NestedModel.ipynb
     - file: biblio/references.md
 site:
+  title: Almshouses Project
   template: book-theme
   actions:
     - title: GitHub
