@@ -25,3 +25,4 @@ site:
       url: https://github.com/jhconning/almshouses
   options:
     hide_toc: false
+    logo_text: Almshouses Project
